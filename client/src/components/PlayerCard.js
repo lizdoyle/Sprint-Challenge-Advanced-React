@@ -26,7 +26,7 @@ function PlayerCard(props) {
                 
                 }}>
                         <Header as="h1">{name} </Header>
-                        <Card.Content content='ID:'>Player #: {id} </Card.Content>
+                        <Card.Content id='ID:'>Player #: {id} </Card.Content>
                         <Card.Meta content={country}/>
                         <Icon>Searches: {searches}</Icon>
                     </Card>
