@@ -1,5 +1,5 @@
 import React from "react";
-import { Card , Icon} from "semantic-ui-react";
+import { Header, Card , Icon} from "semantic-ui-react";
 
 function PlayerCard(props) {
   
@@ -12,9 +12,21 @@ function PlayerCard(props) {
                     const {name, id, country, searches} = player
                 
 
-            return <Card className="playerCard" key={id}>
-                        <Card.Content header={name} />
-                        <Card.Content content={id} />
+            return <Card className="playerCard" key={id} style={{
+                                                             border: '2px solid black',
+                                                             borderRadius: '10px',
+                                                             width: "300px",
+                                                             margin: '0 auto',
+                                                             marginBottom: '30px',
+                                                             boxSizing: 'border-box',
+                                                             padding: '20px'
+
+                
+                
+                
+                }}>
+                        <Header as="h1">{name} </Header>
+                        <Card.Content content='ID:'>Player #: {id} </Card.Content>
                         <Card.Meta content={country}/>
                         <Icon>Searches: {searches}</Icon>
                     </Card>

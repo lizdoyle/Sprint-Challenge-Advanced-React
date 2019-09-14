@@ -37,6 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <h1>Top 100 Players</h1>
       <PlayerCard players={this.state.players}/>
       </div>
     );
