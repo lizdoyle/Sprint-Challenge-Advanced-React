@@ -3,14 +3,16 @@ import { useEffect } from "react";
 
 export const useDarkMode = () => {
 
-    const [nighttime, setNighttime] = useLocalStorage(nighttime);
+    const darkmode = true;
+
+    const [nighttime, setNighttime] = useLocalStorage(darkmode);
 
     useEffect(() => {
 
-        document.body.classList.toggle('dark-mode');
+        document.body.classList.toggle('dark-mode_toggle');
 
 
-    }, [nighttime]);
+    }, [darkmode]);
 
 
     return [nighttime, setNighttime]

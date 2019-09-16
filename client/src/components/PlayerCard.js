@@ -1,8 +1,16 @@
 import React from "react";
-import { Header, Card, Icon } from "semantic-ui-react";
+import { Header, Card, Icon, Button } from "semantic-ui-react";
+import { useDarkMode } from "../hooks/useDarkMode";
+
 
 function PlayerCard(props) {
 
+    const [darkMode, setDarkMode] = useDarkMode(false);
+
+    const toggleMode = e => {
+        e.preventDefault();
+        setDarkMode(!darkMode);
+    }
 
 
     console.log("PlayerCard Props", props.players)
@@ -29,6 +37,7 @@ function PlayerCard(props) {
                     <Card.Content id='ID:'>Player #: {id} </Card.Content>
                     <Card.Meta content={country} />
                     <Icon>Searches: {searches}</Icon>
+                    <Button onClick={toggleMode} className={darkMode ? 'toggle toggled' : "toggle"}> Darkness </Button>
                 </Card>
 
             })}
